@@ -5,8 +5,6 @@
  *
  */
 
-
-
 #ifndef AL_BLUEPILL_H
 #define AL_BLUEPILL_H
 
@@ -15,15 +13,15 @@
 #include "stm32f1xx_hal.h"
 
 /* ---  Macros definitions  -------------------------------------------------------------------- */
-#define GPIOA_PORT 0
-#define GPIOB_PORT 1
-#define GPIOC_PORT 2
-#define GPIOD_PORT 3
+#define GPIOA_PORT   0
+#define GPIOB_PORT   1
+#define GPIOC_PORT   2
+#define GPIOD_PORT   3
 
-#define LED_PUERTO   GPIOC_PORT
+#define LED_PORT     GPIOC_PORT
 #define LED_PIN      13
 
-#define PWM_PUERTO   GPIOA_PORT
+#define PWM_PORT     GPIOA_PORT
 #define PWM_PIN      6
 
 #define DIGITS_GPIO  GPIOB_PORT
@@ -110,7 +108,6 @@
 static GPIO_TypeDef * const puertos_gpio[] = {GPIOA, GPIOB, GPIOC, GPIOD};
 
 /*---  Public Data Declaration  ---------------------------------------------------------------- */
-
 
 /*---  Public Function Declaration  ------------------------------------------------------------ */
 

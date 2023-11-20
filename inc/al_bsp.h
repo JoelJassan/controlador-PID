@@ -5,13 +5,12 @@
  *
  */
 
-
-
 #ifndef AL_BSP_H
 #define AL_BSP_H
 
 /*---  Includes  ------------------------------------------------------------------------------- */
 #include "al_gpio.h"
+//#include "chip.h"
 
 /* ---  Macros definitions  -------------------------------------------------------------------- */
 
@@ -20,11 +19,10 @@
 struct board_s {
     DigitalInput_t  boton;
     DigitalOutput_t led;
-    //DigitalOutput_t pwm;
+    DigitalOutput_t pwm;
 };
 //! Creacion de un tipo de dato que es un puntero a una estructura de la placa.
 typedef struct board_s * board_t;
-
 
 /*---  Public Data Declaration  ---------------------------------------------------------------- */
 

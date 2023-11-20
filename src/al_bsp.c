@@ -50,14 +50,26 @@ board_t board_Create(void) {
     /*  Entradas  */
     board.boton = DigitalInput_Create(KEY_F2_PORT, KEY_F2_PIN, false);
     /*  Salidas  */
-    board.pwm = DigitalOutput_Create(PWM_PUERTO, PWM_PIN);
-    board.led = DigitalOutput_Create(LED_PUERTO, LED_PIN);
+    board.pwm = DigitalOutput_Create(PWM_PORT, PWM_PIN);
+    board.led = DigitalOutput_Create(LED_PORT, LED_PIN);
     return &board;
 }
 
 /*---  Private Function Implementation  -------------------------------------------------------- */
 
 /*---  Public Function Implementation  --------------------------------------------------------- */
+void SysTick_Init(uint16_t ticks) {
+    __asm volatile("cpsid i");
+
+    /* Activate SysTick */
+    SystemCoreClockUpdate();
+    SysTick_Config(SystemCoreClock / ticks);
+
+    /* Update priority set by Systick_Config */
+    NVIC_SetPriority(SysTick_IRQn, (1 << __NVIC_PRIO_BITS) - 1);
+
+    __asm volatile("cpsie i");
+}
 
 /**  doxygen end group definition */
 /*---  End of File  ---------------------------------------------------------------------------- */
