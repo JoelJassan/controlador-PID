@@ -5,8 +5,6 @@
  *
  */
 
-
-
 #ifndef AL_PWM_H
 #define AL_PWM_H
 

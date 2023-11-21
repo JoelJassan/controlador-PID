@@ -6,7 +6,7 @@
  */
 
 /* ---  Headers files inclusions   ------------------------------------------------------------- */
-#include "stm32f1xx_hal.h"
+#include "stm32f1xx_hal.h" //esto creo que no deberia estar
 #include "hal.h"
 #include <stdint.h>
 #include "al_pwm.h"
