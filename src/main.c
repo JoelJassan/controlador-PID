@@ -6,20 +6,13 @@
  */
 
 /* ---  Headers files inclusions   ------------------------------------------------------------- */
-#include "al_gpio.h"
-#include "al_bsp.h"
-#include "al_bluepill.h"
-#include "al_adc.h"
-
-#include <string.h>
+#include "main.h"
 
 /* ---  Macros definitions  -------------------------------------------------------------------- */
-#define REFRESH_TIME 1000 //! Cuenta del Systick
 
 /*---  Private Data Declaration  --------------------------------------------------------------- */
 
 /*---  Public Data Declaration  ---------------------------------------------------------------- */
-static board_t board;
 
 /*---  Private Function Declaration  ----------------------------------------------------------- */
 // void SisTick_Init(uint16_t time);
@@ -35,7 +28,7 @@ static board_t board;
 /*---  Public Function Definition  ------------------------------------------------------------- */
 int main(void) {
     int contador = 0;
-    int divisor  = 50000;
+    int divisor  = 20000;
 
     board        = board_Create();
 
